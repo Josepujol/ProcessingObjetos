@@ -19,10 +19,17 @@ void setup() {
 
 void draw() {
   background(255);
+  
+  // dibuja la pelota
+  fill(255);
+  stroke(28, 201, 16);
+  strokeWeight(3);
+  ellipse(xpos, ypos, diameter, diameter);
 
   // mueve la pelota
   xpos=xpos+vx;
   ypos=ypos+vy;
+  // detectar bordes
   if ((xpos>width-diameter/2)||(xpos-diameter/2<0)) {
     vx=-vx;
   }  
@@ -30,9 +37,5 @@ void draw() {
     vy=-vy;
   }
 
-  // dibuja la pelota
-  fill(255);
-  stroke(28, 201, 16);
-  strokeWeight(3);
-  ellipse(xpos, ypos, diameter, diameter);
+
 }
